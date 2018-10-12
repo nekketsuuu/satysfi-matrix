@@ -64,4 +64,4 @@ Also, this library is distributed under The Unlicense. You can freely edit and u
   [README-ja.md]: https://github.com/nekketsuuu/satysfi-matrix/blob/master/README-ja.md
   [sample_matrix.png]: https://raw.githubusercontent.com/nekketsuuu/satysfi-matrix/master/doc/img/sample_matrix.png
   [example]: https://github.com/nekketsuuu/satysfi-matrix/blob/master/example
-  [GitHub Issue]: https://github.com/nekketsuuu/satysfi-matrix/issues
+  [GitHub Issues]: https://github.com/nekketsuuu/satysfi-matrix/issues

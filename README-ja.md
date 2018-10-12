@@ -64,4 +64,4 @@ Pull request も issue 報告も歓迎しています！　英語でも日本語
   [README.md]: https://github.com/nekketsuuu/satysfi-matrix/blob/master/README.md
   [sample_matrix.png]: https://raw.githubusercontent.com/nekketsuuu/satysfi-matrix/master/doc/img/sample_matrix.png
   [example]: https://github.com/nekketsuuu/satysfi-matrix/blob/master/example
-  [GitHub Issue]: https://github.com/nekketsuuu/satysfi-matrix/issues
+  [GitHub Issues]: https://github.com/nekketsuuu/satysfi-matrix/issues

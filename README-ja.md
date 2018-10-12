@@ -48,7 +48,7 @@ copy matrix.satyh %USERPROFILE%\.satysfi\dist\packages\
 
 ## アンインストール方法
 
-LIBROOT/dist/packages/matrix.satyh` を削除してください。
+`LIBROOT/dist/packages/matrix.satyh` を削除してください。
 
 ## 既知の問題
 

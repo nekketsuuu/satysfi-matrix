@@ -1,0 +1,47 @@
+@require: math
+@require: table
+
+module Matrix : sig
+
+  direct \matrix : [(math list) list] math-cmd
+
+end = struct
+
+  let-math \matrix mss =
+    let center ctx m = inline-fil ++ embed-math ctx m ++ inline-fil in
+    let body = text-in-math MathInner (fun ctx -> (
+      let size = get-font-size ctx in
+      let pads-normal = (0pt, 0pt, size *' 0.25, size *' 0.25) in
+      let pads-top = (0pt, 0pt, 0pt, size *' 0.25) in
+      let pads-bottom = (0pt, 0pt, size *' 0.25, 0pt) in
+      let pads-single = (0pt, 0pt, 0pt, 0pt) in
+      let cell-of-m pads m = NormalCell(pads, inline-skip size ++ center ctx m) in
+      let cells-of-ms pads ms =
+        (match ms with
+         | [] -> []
+         | m :: ms ->
+           (let leftmost = NormalCell(pads, center ctx m) in
+            let rest = List.map (cell-of-m pads) ms in
+            leftmost :: rest))
+      in
+      let-rec cellss-of-mss-tail mss =
+        (match mss with
+         | [] -> []
+         | ms :: [] -> [cells-of-ms pads-bottom ms]
+         | ms :: mss -> (cells-of-ms pads-normal ms) :: (cellss-of-mss-tail mss))
+      in
+      let cellss =
+        (match mss with
+         | [] -> []
+         | ms :: [] -> [cells-of-ms pads-single ms]
+         | ms :: mss -> (cells-of-ms pads-top ms) :: (cellss-of-mss-tail mss))
+      in
+      let grf = fun _ _ -> [] in
+      let ib = tabular cellss grf in
+      let (_, height, depth) = get-natural-metrics ib in
+      let hgtaxis = get-axis-height ctx in
+      let rising = hgtaxis -' (height +' depth) *' 0.5 in
+      raise-inline rising ib))
+    in math-paren Math.paren-left Math.paren-right body
+
+end

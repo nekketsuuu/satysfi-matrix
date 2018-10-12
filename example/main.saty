@@ -1,0 +1,20 @@
+@require: stdjareport
+@require: matrix
+
+document (|
+  title = {Examples of Matrix Package};
+  author = {\@nekketsuuu};
+|) '<
+  +p {
+    Linear equation:
+  }
+  +math (${
+    \matrix![[${1}; ${2}]; [${2}; ${3}]] \matrix![[${x}]; [${y}]] = \matrix![[${1}]; [${2}]]
+  });
+  +p {
+    Matrix inverse:
+  }
+  +math (${
+    \matrix![[${1}; ${2}]; [${3}; ${4}]]^{-1} = -\frac{1}{2} \matrix![[${4}; ${-2}]; [${-3}; ${1}]]
+  });
+>

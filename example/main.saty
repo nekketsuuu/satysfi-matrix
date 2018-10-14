@@ -17,4 +17,15 @@ document (|
   +math (${
     \matrix![[${1}; ${2}]; [${3}; ${4}]]^{-1} = -\frac{1}{2} \matrix![[${4}; ${-2}]; [${-3}; ${1}]]
   });
+  +p {
+    Vandermonde matrix:
+  }
+  +math (
+    let row i = [${1}; ${x_#i}; ${x_#i^2}; ${\cdots}; ${x_#i^{n-1}}] in
+    let dotrow = [${\vdots}; ${\vdots}; ${\vdots}; ${\ddots}; ${\vdots}] in
+    let vandermonde =
+      [row ${1}; row ${2}; dotrow; row ${n}]
+    in ${
+      \matrix!(vandermonde)
+  });
 >

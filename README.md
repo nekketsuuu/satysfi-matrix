@@ -24,7 +24,7 @@ See [`example`][example] for more complicated examples.
 
 ## Notice
 
-**CAUTION**: This library is tested only under SATySFi 0.0.3. Since SATySFi is under the initial development period, any compatibility is ensured for future versions of SATySFi.
+**CAUTION**: This library is tested only under SATySFi 0.0.3. Since SATySFi is under the initial development period, no compatibility is ensured for future versions of SATySFi.
 
 ## Installation
 

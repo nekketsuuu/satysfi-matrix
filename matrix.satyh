@@ -4,10 +4,10 @@
 module Matrix : sig
 
   direct \matrix : [(math list) list] math-cmd
+  direct \matrix-body : [(math list) list] math-cmd
 
 end = struct
-
-  let-math \matrix mss =
+  let matrix-body mss =
     let center ctx m = inline-fil ++ embed-math ctx m ++ inline-fil in
     let body = text-in-math MathInner (fun ctx -> (
       let size = get-font-size ctx in
@@ -41,7 +41,8 @@ end = struct
       let (_, height, depth) = get-natural-metrics ib in
       let hgtaxis = get-axis-height ctx in
       let rising = hgtaxis -' (height +' depth) *' 0.5 in
-      raise-inline rising ib))
-    in math-paren Math.paren-left Math.paren-right body
-
+      raise-inline rising ib)) 
+    in body
+  let-math \matrix mss = math-paren Math.paren-left Math.paren-right (matrix-body mss)
+  let-math \matrix-body mss = matrix-body mss 
 end

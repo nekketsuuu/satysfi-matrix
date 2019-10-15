@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Add an example: Vandermonde matrix
+- Implement `\matrix-body` (#7 by @hsjoihs)
 
 ## 0.0.1 - 2018-10-12
 ### Added
